@@ -107,7 +107,7 @@ $.getJSON("https://johancordoba78.github.io/datos/bovinos.geojson", function(geo
       var popupText = "<strong>Región</strong>: " + feature.properties.region + "<br>" + 
                       "<strong>Actividad</strong>: " + feature.properties.ActividadP + "<br>" + 
                       "<strong>Población</strong>: " + feature.properties.Poblacion + "<br>" + 
-                      "<strong>Institución_código</strong>: " + feature.properties.codigo + "<br>" + 
+                      "<strong>código</strong>: " + feature.properties.codigo + "<br>" + 
                       "<br>";
       layer.bindPopup(popupText);
     },
