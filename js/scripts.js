@@ -67,6 +67,25 @@ $.getJSON("https://johancordoba78.github.io/datos/AC_corr.geojson", function(geo
 
   control_capas.addOverlay(paises, 'América Central');
 });  
+
+
+// Capa vectorial de Paises en formato GeoJSON
+$.getJSON("https://johancordoba78.github.io/datos/AmerCentra.geojson", function(geodata) {
+  var paises_1 = L.geoJson(geodata, {
+    style: function(feature) {
+	  return {'color': "#ff6600", 'weight': 1.5, 'fillOpacity': 0.0}
+    },
+    onEachFeature: function(feature, layer) {
+      var popupText = "<strong>Departamentos & Provincias</strong>: " + feature.properties.NAME_12 + "<br>" + "<strong>País</strong>: " + feature.properties.NAME_01;
+      layer.bindPopup(popupText);
+    }			
+  }).addTo(mapa);
+
+  control_capas.addOverlay(paises_1, 'División político - administrativa');
+});  
+
+
+
 ///////////////////////////////////
 
 // Ícono personalizado para bovinos
